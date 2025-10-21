@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UMKM Ceria — Toko Online</title>
+  <meta name="description" content="UMKM Ceria — Toko online siap pakai. HTML / CSS / JS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">UM</div>
+        <div>
+          <h1 class="brand-name">UMKM Ceria</h1>
+          <div class="tagline">Produk lokal — Siap kirim</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#shop">Produk</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button id="openCart" class="cart-btn">Keranjang (<span id="cartCount">0</span>)</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h2>Produk terbaik dari pengrajin lokal</h2>
+          <p class="lead">Website statis siap pakai — katalog, keranjang client-side, dan kontak WhatsApp. Upload saja ke hosting (GitHub Pages / Netlify).</p>
+          <div class="hero-cta">
+            <a href="#shop" class="btn primary">Belanja Sekarang</a>
+            <a href="#contact" class="btn ghost">Hubungi Kami</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="card-offer">
+            <strong>Paket Siap Pakai</strong>
+            <ul>
+              <li>Landing, katalog & keranjang</li>
+              <li>Hingga 50 produk (mudah di-edit)</li>
+              <li>Integrasi WhatsApp & form kontak</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="shop" class="section shop">
+        <div class="section-head">
+          <h3>Produk Unggulan</h3>
+          <div class="controls">
+            <input id="search" placeholder="Cari produk..." />
+            <select id="filterCat">
+              <option value="all">Semua Kategori</option>
+              <option value="food">Makanan</option>
+              <option value="beverage">Minuman</option>
+              <option value="craft">Kerajinan</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="productGrid" class="grid">
+          <!-- rendered by JS -->
+        </div>
+
+        <div class="pager">
+          <button id="loadMore" class="btn ghost">Muat Lebih</button>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <h3>Tentang UMKM Ceria</h3>
+        <p>UMKM Ceria membantu pengrajin lokal menampilkan produk ke pelanggan online. Mudah dikelola dan siap produksi.</p>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h3>Kontak</h3>
+        <p>Chat WhatsApp: <a id="waLink" href="https://wa.me/628123456789" target="_blank">+62 812-3456-789</a></p>
+        <form id="contactForm" class="contact-form">
+          <input name="name" placeholder="Nama" required />
+          <input name="business" placeholder="Usaha / Toko" />
+          <textarea name="message" placeholder="Pesan" required></textarea>
+          <button class="btn primary" type="submit">Kirim</button>
+          <div id="contactResult" class="muted small"></div>
+        </form>
+      </section>
+    </main>
+
+    <aside id="cartPanel" class="cart-panel" aria-hidden="true">
+      <div class="cart-header">
+        <h4>Keranjang</h4>
+        <button id="closeCart" class="btn ghost">Tutup</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="muted">Total: <span id="cartTotal">Rp 0</span></div>
+        <div class="cart-actions">
+          <button id="clearCart" class="btn ghost">Bersihkan</button>
+          <button id="checkoutBtn" class="btn primary">Checkout (Demo)</button>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      © <span id="year"></span> UMKM Ceria — Siap pakai.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
